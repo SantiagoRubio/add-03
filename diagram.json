@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": 33.96,
+      "left": -194.61,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "ntc1:GND", "pico:GND.1", "black", [ "h61.07", "v-26.47" ] ],
+    [ "ntc1:OUT", "pico:GP26", "green", [ "h138.41", "v21.57" ] ],
+    [ "ntc1:VCC", "pico:3V3", "red", [ "h138.41", "v-21.4" ] ]
+  ]
+}
